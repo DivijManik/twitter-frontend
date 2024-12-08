@@ -1,0 +1,132 @@
+/*  Menu Drawer  */
+
+.MenuBackground {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.233);
+}
+
+.MenuBackground hr {
+    margin-right: 20px;
+    margin-left: 60px;
+    margin-top: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.495);
+}
+
+.MenuDrawer {
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 280px;
+    border: 1px solid rgba(128, 128, 128, 0.661);
+    margin-left: -130px;
+    margin-top: -1px;
+    animation: slide 0.3s forwards;
+    top: 0px;
+}
+
+.MenuDrawer.closed {
+    animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-170px);
+    }
+}
+
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-170px);
+    }
+
+    100% {
+        transform: translateX(80px);
+    }
+}
+
+/* menu Drawer - top ( Close btn & Logo ) */
+.MenuTop {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.MenuLogo {
+    position: relative;
+    left: 20px;
+}
+
+.MenuLogoName {
+    position: relative;
+    vertical-align: 6px;
+    font-weight: 700;
+    font-size: 20px;
+    left: 20px;
+}
+
+.CloseMenu {
+    width: 40px;
+    height: 40px;
+    margin-left: -50px;
+    background-color: black;
+    border: none;
+}
+
+.CloseMenu:hover {
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.444);
+}
+
+/* Menu Btns - bottom ( Home, New Playlist, Etc. ) */
+.HomeMenu,
+.ExploreMenu,
+.LibraryMenu {
+    margin-left: 40px;
+    margin-bottom: 1px;
+    width: 75%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-weight: 500;
+
+}
+
+.HomeMenu:hover,
+.ExploreMenu:hover,
+.LibraryMenu:hover {
+    background-color: rgba(88, 84, 84, 0.5);
+}
+
+.HomeMenu img,
+.ExploreMenu img,
+.LibraryMenu img {
+    top: 5px;
+    position: relative;
+
+}
+
+.HomeMenu p,
+.ExploreMenu p,
+.LibraryMenu p {
+    display: inline;
+    margin-left: 30px;
+}
+
+/* Menu btn selection */
+.HomeMenu.selected,
+.ExploreMenu.selected,
+.LibraryMenu.selected {
+    background-color: rgba(88, 84, 84, 1);
+}

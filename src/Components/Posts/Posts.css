@@ -1,0 +1,36 @@
+.UserImg {
+    position: relative;
+    left: 10px;
+    margin-top: 20px;
+    width: 30px;
+    background-color: rgb(77, 77, 77);
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.PostParent {
+    width: 100%;
+    text-align: left;
+}
+
+.UserName {
+    vertical-align: 13px;
+    font-size: larger;
+    font-weight: 600;
+    position: relative;
+    left: 10px;
+    margin-left: 30px;
+}
+
+.Tweet {
+    position: relative;
+    left: 60px;
+    margin-left: 20px;
+    width: 80%;
+}
+
+.Date {
+    position: absolute;
+    right: 30px;
+    color: rgb(186, 186, 186);
+}
