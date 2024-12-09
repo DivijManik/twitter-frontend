@@ -9,10 +9,15 @@ import HomeImg from './Images/home.svg'
 
 import Posts from './Components/Posts/Posts';
 import MenuDrawer from './Components/MenuDrawer/MenuDrawer';
+import CreatePost from './Components/CreatePost/CreatePost';
+
 
 function App() {
   // Set Current page
   const [CurrentPage, setCurrentPage] = useState('.Home');
+
+  // Is Creating post
+  const [CreatePostV, setCreatePost] = useState(false)
 
   // Opening menu from top 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,22 +35,29 @@ function App() {
   // useEffect (()=> {
   //   alert("Count changed to " +Counter);
   // },[Counter]);
-  return (
-    <div className="App">
-      {CurrentPage == ".Home" ?
-        (
-          <HomePage />
-        ) : <ProfilePage />
+  if (CreatePostV)
+    return (
+      <CreatePost SetCreatePost={setCreatePost} />
 
-      }
+    )
+  else
+    return (
+      <div className="App">
+        {CurrentPage == ".Home" ?
+          (
+            <HomePage />
+          ) : <ProfilePage />
 
-      <CreatePostBtn />
-      <TopBar setMenu={handleStateMenu} />
-      <BottomBar setCurrentPage={setCurrentPage} />
+        }
 
-      {menuOpen && (<MenuDrawer setMenu={handleStateMenu} setCurrentPage={setCurrentPage} />)}
-    </div>
-  );
+        <CreatePostBtn SetCreatePost={setCreatePost} />
+        <TopBar setMenu={handleStateMenu} />
+        <BottomBar setCurrentPage={setCurrentPage} />
+
+        {menuOpen && (<MenuDrawer setMenu={handleStateMenu} setCurrentPage={setCurrentPage} />)}
+
+      </div>
+    );
 }
 
 function TopBar({ setMenu }) {
@@ -75,9 +87,9 @@ function BottomBar({ setCurrentPage }) {
   )
 }
 
-function CreatePostBtn() {
+function CreatePostBtn({ SetCreatePost }) {
   return (
-    <><button className='CreatePostBtn'><img src={PostImg} ></img></button></>
+    <><button className='CreatePostBtn' onClick={() => SetCreatePost(true)}><img src={PostImg} ></img></button></>
   )
 }
 

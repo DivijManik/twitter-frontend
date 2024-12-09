@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './MenuDrawer.css'
 
-import CloseImg from './Images/close.svg'
+import CloseImg from '../Images/close.svg'
 
 import HomeImg from './Images/home.svg';
 import LogoutImg from './Images/logout.svg';

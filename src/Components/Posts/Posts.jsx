@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Posts.css'
-import PersonImg from './person.svg'
+import PersonImg from '../Images/person.svg'
+
 function Posts({ ProfileImg = PersonImg, UserName = "User", Date = "1/1/20", Tweet = "Hi Everyone!" }) {
     return (
         <div className='PostParent'>

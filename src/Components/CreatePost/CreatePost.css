@@ -1,0 +1,85 @@
+.UserImg_cpost {
+    position: absolute;
+    left: 10px;
+    margin-top: 70px;
+    width: 30px;
+    background-color: rgb(77, 77, 77);
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.Input_cpost {
+    display: inline;
+
+    resize: none;
+    border: none;
+    outline: none;
+    color: white;
+
+    font-size: 25px;
+    background-color: black;
+
+    margin-left: 75px;
+    margin-top: 75px;
+    width: 75%;
+    height: 350px;
+}
+
+.CreatePostTop {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 45px;
+}
+
+.CloseBtn_cpost {
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+.PostBtn {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    border-radius: 15px;
+    background-color: rgb(8, 106, 219);
+    color: white;
+
+    border: none;
+    width: auto;
+    height: 25px;
+    width: 65px;
+
+    font-size: 17px;
+
+}
+
+.CreatePostParent {
+    width: 100%;
+    text-align: left;
+}
+
+.UserName {
+    vertical-align: 13px;
+    font-size: larger;
+    font-weight: 600;
+    position: relative;
+    left: 10px;
+    margin-left: 30px;
+}
+
+.Tweet {
+    position: relative;
+    left: 60px;
+    margin-left: 20px;
+    width: 80%;
+}
+
+.Date {
+    position: absolute;
+    right: 30px;
+    color: rgb(186, 186, 186);
+}
