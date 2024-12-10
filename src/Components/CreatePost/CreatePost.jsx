@@ -3,13 +3,24 @@ import './CreatePost.css'
 import PersonImg from '../Images/person.svg'
 import CloseImg from '../Images/close.svg'
 
-function CreatePost({ SetCreatePost }) {
+function CreatePost({ SetCreatePost, AllTweets = [], SetAllTweets }) {
     const [tweet, setTweet] = useState("");
+
+    function onPostClicked() {
+        var MyTweets = AllTweets;
+        MyTweets.unshift(tweet); // push at beginning
+
+        SetAllTweets(MyTweets);
+
+        // close this page
+        SetCreatePost(false);
+    }
+
     return (
         <div className='CreatePostParent'>
             <div className='CreatePostTop'>
                 <button className='CloseBtn_cpost' onClick={() => SetCreatePost(false)}><img src={CloseImg}></img></button>
-                <button className='PostBtn'>Post</button>
+                <button className='PostBtn' onClick={() => onPostClicked()}>Post</button>
             </div>
             {/* User Img */}
             <img className='UserImg_cpost' src={PersonImg}></img>

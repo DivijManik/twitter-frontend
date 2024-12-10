@@ -19,6 +19,10 @@ function App() {
   // Is Creating post
   const [CreatePostV, setCreatePost] = useState(false)
 
+  // all tweets of the currennt user
+  // can be pused to backend instead
+  const [allTweets, setAllTweets] = useState([]);
+
   // Opening menu from top 
   const [menuOpen, setMenuOpen] = useState(false);
   const handleStateMenu = (e) => {
@@ -37,7 +41,7 @@ function App() {
   // },[Counter]);
   if (CreatePostV)
     return (
-      <CreatePost SetCreatePost={setCreatePost} />
+      <CreatePost SetCreatePost={setCreatePost} AllTweets={allTweets} SetAllTweets={setAllTweets} />
 
     )
   else
@@ -45,8 +49,8 @@ function App() {
       <div className="App">
         {CurrentPage == ".Home" ?
           (
-            <HomePage />
-          ) : <ProfilePage />
+            <HomePage AllTweets={allTweets} />
+          ) : <ProfilePage AllTweets={allTweets} />
 
         }
 
@@ -94,9 +98,16 @@ function CreatePostBtn({ SetCreatePost }) {
 }
 
 
-function HomePage() {
+function HomePage({ AllTweets }) {
   return (
     <>
+      {
+        AllTweets.map((item) => {
+          return (
+            <Posts Tweet={item} />)
+        }
+        )
+      }
       <Posts Tweet="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries" />
 
       <Posts Tweet="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries" />
@@ -108,7 +119,7 @@ function HomePage() {
   )
 }
 
-function ProfilePage() {
+function ProfilePage({ AllTweets }) {
   return (
     <>
       <div className='ProfileDetails'>
@@ -133,6 +144,13 @@ function ProfilePage() {
 
 
       <div className='UserPosts'>
+        {
+          AllTweets.map((item) => {
+            return (
+              <Posts Tweet={item} />)
+          }
+          )
+        }
         <Posts Tweet="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries" />
 
         <Posts Tweet="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries" />
