@@ -5,6 +5,7 @@
     height: 10%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.233);
+    z-index: 3;
 }
 
 .MenuBackground hr {
