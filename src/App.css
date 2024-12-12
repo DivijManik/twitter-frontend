@@ -4,6 +4,11 @@
   margin-bottom: 70px;
 }
 
+/* remove button highlight on mobile device */
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
   background-color: black;
   color: white;

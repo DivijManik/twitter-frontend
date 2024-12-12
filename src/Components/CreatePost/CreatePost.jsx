@@ -7,13 +7,17 @@ function CreatePost({ SetCreatePost, AllTweets = [], SetAllTweets }) {
     const [tweet, setTweet] = useState("");
 
     function onPostClicked() {
-        var MyTweets = AllTweets;
-        MyTweets.unshift(tweet); // push at beginning
+        if (tweet.length > 0) {
+            var MyTweets = AllTweets;
+            MyTweets.unshift(tweet); // push at beginning
 
-        SetAllTweets(MyTweets);
+            SetAllTweets(MyTweets);
 
-        // close this page
-        SetCreatePost(false);
+            // close this page
+            SetCreatePost(false);
+        }
+        else
+            alert("Tweet can't be empty")
     }
 
     return (
